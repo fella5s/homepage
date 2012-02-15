@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+html {
+	height: 101%;
+}
+body {
+	background-image: url('../images/body.png');
+	background-repeat: repeat-x;
+}
+#container {
+	font-family: "Courier New", Courier, monospace;
+	color: rgb(5, 0, 55);
+	height: 150px;
+	width: 900px;
+	margin: auto;
+}
+#top {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 10px 10px;
+	width: 900px;
+	height: 130px;
+	background-image: url('../images/top.png');
+	background-repeat: no-repeat;
+}
+#left {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 1px 10px;
+	width: 200px;
+	height: 448px;
+	background-color: rgb(255, 255, 255);
+}
+
+ul.linklist {
+	position: relative;
+	left: -55px;
+	font-size: 24px;
+	list-style-type: none;
+	text-align: right;
+	width: 190px;
+}
+li.linksub {
+	font-size: 18px;
+}
+widget {
+
+}
+
+
+#main {
+	position: relative;
+	left: 200px;
+	top: -450px;
+	padding: 4px 10px 1px 30px;
+	width: 640px;
+	min-height: 650px;
+	background-image: url('../images/right.png');
+	background-repeat: repeat-y;
+	background-color: rgb(242, 242, 242);
+}
+#cvimage {
+	position: relative;
+	left: 0px;
+	float: right;
+	width: 180px;
+	height: 510px;
+	padding: 10px;
+	border: solid 1px;
+	background-image: url(../images/petri.jpg)
+}
+.smallimage {
+	position: relative;
+	left: 0px;
+	float: right;
+	width: 180px;
+	height: 135px;
+	padding: 0px;
+	border: solid 1px;
+}
