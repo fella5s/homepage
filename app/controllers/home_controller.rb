@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     @path = "Etusivu"
-    @links = "links here"
+    @Pages = Page.all
   end
-
 end
