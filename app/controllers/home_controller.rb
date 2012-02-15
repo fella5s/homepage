@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @path = "Etusivu"
-    @Pages = Page.all
+    @pages = Page.all
+    @page = Page.where(:order => 1).first
   end
 end

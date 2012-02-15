@@ -11,7 +11,9 @@
       <div id="top">./<%= @path %></div>
       <div id="left">
         <ul class="linklist">
-          <li><%= @links %></li>
+          <% @pages.each do |p| %>
+          <li><%= p.name %></li>
+          <% end %>
         </ul>
       </div>
       <div id="main">
