@@ -1,0 +1,24 @@
+<%= form_for @page do |f| %>
+
+  <div>
+    Name: <br />
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    Topic: <br />
+    <%= f.text_field :topic %>
+  </div>
+  <div>
+    Desc: <br />
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    ord: <br />
+    <%= f.text_field :order %>
+  </div>
+
+  <%= f.submit "save" %>
+  or
+  <%= link_to "cancel", :root %>
+
+<% end %>
