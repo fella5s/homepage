@@ -1,15 +1,24 @@
 class PagesController < ApplicationController
   
+  before_filter :check_pages
+  
+  def check_pages
+  	@pages = Page.select("name, id")
+    if @pages.empty? and params[:page].nil?
+      flash[:notice] = "No pages created, create one to get started"
+      @page = Page.new
+      render action: :new
+    end
+  end
+  
   # GET /
   def index
-    @pages = Page.select("name, id")
-    @page = Page.where(:order ).first
+    @page = Page.all.first
   end
 
   # GET /page/1
   # GET /page/1.json
   def show
-    @pages = Page.all
     @page = Page.find(params[:id])
     
     #we redirect first page to root
@@ -19,12 +28,10 @@ class PagesController < ApplicationController
   end
   
   def new
-    @pages = Page.all
     @page = Page.new
   end
 
   def create
-    @pages = Page.all
     @page = Page.new(params[:page])
     if @page.save
       flash[:notice] = "page created"
@@ -35,15 +42,14 @@ class PagesController < ApplicationController
   end
   
   def edit
-    @pages = Page.all
     @page = Page.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id])
-    if @book.update_attributes(params[:book])
-      flash[:notice] = "Book saved"
-      redirect_to book_path(@book)
+    @page = Page.find(params[:id])
+    if @page.update_attributes(params[:page])
+      flash[:notice] = "Page saved"
+      redirect_to page_path(@page)
     else
       render action: :edit
     end
