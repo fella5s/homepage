@@ -1,11 +1,15 @@
 <h1><%= @page.topic %></h1>
 <p><%= @page.description.html_safe %></p>
-<fieldset>
-	<legend>Muokkaa</legend>
-	<%= link_to "Edit", edit_page_path(@page) %>
-	or
-	<%= link_to "Delete", page_path(@page), { :class => "dangerous",
-											  :confirm => "Are you sure?",
-											  :method => :delete }
-	%>
-</fieldset>
+
+<div class="adminpanel">
+  <p align="right">Admin -paneeli</p>
+  <p>
+    <%= link_to "Muokkaa", edit_page_path(@page) %>
+    tai
+    <%= link_to "Poista", page_path(@page), { :class => "dangerous",
+                          :confirm => "Are you sure?",
+                          :method => :delete }
+    %>
+  <p/>
+  <p><b>Paivitetty: <%= @page.updated_at.strftime("%d.%m.%Y %H:%m") %> </b></p>
+</div>

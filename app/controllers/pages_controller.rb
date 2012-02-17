@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     
     #we redirect first page to root
-    if @page.order==1
+    if @page.id==@pages.first.id
       redirect_to :root
     end
   end
@@ -42,6 +42,7 @@ class PagesController < ApplicationController
   end
   
   def edit
+    @files = Dir.glob("public/images/*")
     @page = Page.find(params[:id])
   end
 

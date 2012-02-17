@@ -12,13 +12,31 @@
     Desc: <br />
     <%= f.text_area :description %>
   </div>
-  <div>
-    ord: <br />
-    <%= f.text_field :order %>
-  </div>
 
-  <%= f.submit "save" %>
-  or
-  <%= link_to "cancel", :root %>
+  
+<div class="adminpanel">
+  <p align="right">Admin -paneeli</p>
 
+  <%= f.submit "Tallenna" %>,
+  <%= link_to "Peruuta", :root %> tai
+  <%= link_to "Poista", page_path(@page), { :class => "dangerous",
+                        :confirm => "Are you sure?",
+                        :method => :delete }
+  %>
+    
+  <p><b>Paivitetty: <%= @page.updated_at.strftime("%d.%m.%Y %H:%m") %> </b></p>
+
+  <ul>
+  <legend> kuvat:</legend>
+  <% @files.each do |file| %>
+  <li><%= file.gsub("public/","../") %></li>
+  <% end %>
+  </ul>
+
+    <p>protip: <i>&lt;img alt="picture" src="../images/picture.png" /&gt;</i></p>
+
+  
+</div>
+
+  
 <% end %>

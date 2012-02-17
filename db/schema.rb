@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215194401) do
+ActiveRecord::Schema.define(:version => 20120217110252) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "topic"
     t.text     "description"
-    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

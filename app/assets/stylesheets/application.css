@@ -39,7 +39,19 @@ body {
 	height: 448px;
 	background-color: rgb(255, 255, 255);
 }
-
+.adminpanel {
+	position: fixed;
+  border:1px solid;
+	right: 0px;
+	top: 0px;
+	padding: 10px 10px;
+	width: 300px;
+	background-color: rgb(255, 255, 255);
+}
+.adminpanel p {
+	padding: 1px 1px;
+  margin: 1px 1px;
+}
 ul.linklist {
 	position: relative;
 	left: -55px;

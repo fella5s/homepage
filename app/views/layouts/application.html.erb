@@ -12,10 +12,7 @@
       <div id="left">
         <ul class="linklist">
           <% @pages.each do |page| %>
-          <li><%= link_to page.name, page_path(page.id) %></li>
-          
-          
-          
+          <li><small><%= link_to page.name, page_path(page.id) %></small></li>
           <% end %>
           <li><small><%= link_to "Lisaa uusi sivu", new_page_path %></small></li>
         </ul>
